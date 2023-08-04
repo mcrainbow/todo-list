@@ -1,0 +1,263 @@
+@import "./reset";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #3e3e3e;
+}
+
+.container {
+  width: 1270px;
+  margin: 0 auto;
+}
+
+.burger {
+  width: 30px;
+  height: 25px;
+  & span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+
+    &::after,
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      position: absolute;
+    }
+    &::before {
+      top: 10px;
+    }
+    &::after {
+      bottom: 10px;
+    }
+  }
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    border: 1px solid #3e3e3e;
+  }
+}
+
+// ! Main
+
+.main {
+  flex: 1 0 auto;
+
+  margin-top: 50px;
+}
+
+// ! Header
+
+.header {
+  height: 100px;
+
+  background-color: #222222;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: bold;
+
+    color: white;
+  }
+}
+
+// ! Content
+.content {
+  height: 100%;
+}
+
+.content__container {
+  display: flex;
+
+  height: 100%;
+}
+.content__categories {
+  color: white;
+  background-color: #222222;
+
+  flex: 1;
+  padding: 20px;
+
+  height: 100%;
+  border-radius: 10px;
+}
+.categories__title {
+  font-size: 32px;
+  line-height: 1.6;
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+.search {
+  color: white;
+  border: 2px solid #ea5959;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #3e3e3e;
+}
+.categories__search {
+  margin-bottom: 30px;
+  width: 100%;
+}
+.categories__list {
+}
+.categories__item {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.categories__text {
+  font-size: 25px;
+}
+.categories__text_active {
+  color: #ea5959;
+  font-weight: bold;
+}
+.content__tasks {
+  flex: 3;
+  background-color: #222222;
+
+  padding: 20px;
+
+  height: 100%;
+  border-radius: 10px;
+  margin-left: 70px;
+}
+.tasks__title {
+  color: white;
+  font-size: 32px;
+  line-height: 1.6;
+
+  margin-bottom: 30px;
+}
+.tasks__search {
+  width: 50%;
+
+  margin-bottom: 50px;
+}
+.tasks__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  border: 1px solid #ea5959;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.tasks__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  &:checked + .tasks__text::before {
+    border-color: #ea5959;
+    background-color: #ea5959;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  }
+  /* стили при наведении курсора на checkbox */
+  &:not(:disabled):not(:checked) + .tasks__text:hover::before {
+    border-color: #ec6c6c;
+  }
+  /* стили для активного состояния чекбокса (при нажатии на него) */
+  &:not(:disabled):active + .tasks__text::before {
+    border-color: #ea5959;
+    background-color: #ea5959;
+  }
+  /* стили для чекбокса, находящегося в фокусе */
+  &:focus + .tasks__text::before {
+    box-shadow: 0 0 0 0.2rem rgb(234, 89, 89, 0.25);
+  }
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  &:focus:not(:checked) + .tasks__text::before {
+    border-color: #ea5959;
+  }
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  &:disabled + .tasks__text::before {
+    background-color: #ea5959;
+  }
+}
+
+.tasks__text {
+  font-size: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+}
+.tasks__basket {
+  margin-left: auto;
+
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+// ! Footer
+
+.footer {
+  margin-top: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-github {
+  color: black;
+  font-size: 24px;
+  transition: transform 0.3s ease-ins-out;
+
+  &:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+}

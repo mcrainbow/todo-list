@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <div class="burger header__burger">
+          <span></span>
+        </div>
+        <div class="header__title">
+          <h1>To Do List</h1>
+        </div>
+        <div class="avatar header__avatar">
+          <a href="#" class="avatar__link">
+            <img src="./images/avatar.jpg" alt="" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="content">
+        <div class="container content__container">
+          <div class="content__categories">
+            <h2 class="categories__title">Categories</h2>
+            <input
+              placeholder="Search for the category..."
+              type="text"
+              class="search categories__search"
+            />
+            <ul class="categories__list">
+              <li class="categories__item">
+                <p class="categories__text categories__text_active">All</p>
+              </li>
+              <li class="categories__item">
+                <p class="categories__text">Health</p>
+              </li>
+              <li class="categories__item">
+                <p class="categories__text">Study</p>
+              </li>
+            </ul>
+          </div>
+          <div class="content__tasks">
+            <h2 class="tasks__title">All Tasks</h2>
+            <input
+              placeholder="Search for task..."
+              type="text"
+              class="search tasks__search"
+            />
+            <ul class="tasks__list">
+              <li class="tasks__item">
+                <input
+                  class="tasks__checkbox"
+                  type="checkbox"
+                  id="tasks__checkbox-1"
+                  value="yes"
+                />
+                <label class="tasks__text" for="tasks__checkbox-1"
+                  >Make Homework</label
+                >
+                <div class="tasks__basket">
+                  <svg
+                    width="16"
+                    height="18"
+                    viewBox="0 0 16 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 6.83333V13.8333M10.9167 6.83333L10.3333 13.8333M5.08333 6.83333L5.66667 13.8333M5.66667 3.33333L6.25 1H9.75L10.3333 3.33333M15 3.33333H2.16667L3.33333 17.3333H12.6667L13.8333 3.33333H1H15Z"
+                      stroke="#FF0000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li class="tasks__item">
+                <input
+                  class="tasks__checkbox"
+                  type="checkbox"
+                  id="tasks__checkbox-2"
+                  value="yes"
+                />
+                <label class="tasks__text" for="tasks__checkbox-2"
+                  >Make Homework</label
+                >
+                <div class="tasks__basket">
+                  <svg
+                    width="16"
+                    height="18"
+                    viewBox="0 0 16 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 6.83333V13.8333M10.9167 6.83333L10.3333 13.8333M5.08333 6.83333L5.66667 13.8333M5.66667 3.33333L6.25 1H9.75L10.3333 3.33333M15 3.33333H2.16667L3.33333 17.3333H12.6667L13.8333 3.33333H1H15Z"
+                      stroke="#FF0000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        mcrainbow
+      </p>
+      <a href="https://github.com/mcrainbow" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/2cffbe9dc3.js"
+      crossorigin="anonymous"
+    ></script>
+    >
+  </body>
+</html>
