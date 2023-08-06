@@ -12,6 +12,7 @@
     <title>To Do List</title>
   </head>
   <body>
+    <div class="overlay" style="display: none"></div>
     <header class="header">
       <div class="container header__container">
         <div class="burger header__burger">
@@ -38,81 +39,63 @@
               type="text"
               class="search categories__search"
             />
+            <input
+              type="button"
+              class="categories__btn btn"
+              value="Add Category"
+            />
+            <div class="popup categories__popup hidden">
+              <div class="categories__popup-wrapper">
+                <input
+                  type="text"
+                  class="categories__popup-input"
+                  placeholder="Input category name..."
+                />
+                <input
+                  type="button"
+                  class="categories__popup-btn btn"
+                  value="Add"
+                />
+              </div>
+            </div>
+
             <ul class="categories__list">
               <li class="categories__item">
-                <p class="categories__text categories__text_active">All</p>
-              </li>
-              <li class="categories__item">
-                <p class="categories__text">Health</p>
-              </li>
-              <li class="categories__item">
-                <p class="categories__text">Study</p>
+                <p class="categories__text active">All</p>
               </li>
             </ul>
           </div>
           <div class="content__tasks">
             <h2 class="tasks__title">All Tasks</h2>
-            <input
-              placeholder="Search for task..."
-              type="text"
-              class="search tasks__search"
-            />
-            <ul class="tasks__list">
-              <li class="tasks__item">
-                <input
-                  class="tasks__checkbox"
-                  type="checkbox"
-                  id="tasks__checkbox-1"
-                  value="yes"
-                />
-                <label class="tasks__text" for="tasks__checkbox-1"
-                  >Make Homework</label
-                >
-                <div class="tasks__basket">
-                  <svg
-                    width="16"
-                    height="18"
-                    viewBox="0 0 16 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8 6.83333V13.8333M10.9167 6.83333L10.3333 13.8333M5.08333 6.83333L5.66667 13.8333M5.66667 3.33333L6.25 1H9.75L10.3333 3.33333M15 3.33333H2.16667L3.33333 17.3333H12.6667L13.8333 3.33333H1H15Z"
-                      stroke="#FF0000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+            <div class="tasks__inputs">
+              <input
+                placeholder="Search for task..."
+                type="text"
+                class="search tasks__search"
+              />
+              <input type="button" class="tasks__btn btn" value="Add Task" />
+              <div class="popup tasks__popup hidden">
+                <div class="tasks__popup-wrapper">
+                  <input
+                    type="text"
+                    class="tasks__popup-task"
+                    placeholder="Input task name..."
+                  />
+                  <input
+                    type="text"
+                    class="tasks__popup-cat"
+                    placeholder="Input category name..."
+                  />
+                  <input
+                    type="button"
+                    class="tasks__popup-btn btn"
+                    value="Add"
+                  />
                 </div>
-              </li>
-              <li class="tasks__item">
-                <input
-                  class="tasks__checkbox"
-                  type="checkbox"
-                  id="tasks__checkbox-2"
-                  value="yes"
-                />
-                <label class="tasks__text" for="tasks__checkbox-2"
-                  >Make Homework</label
-                >
-                <div class="tasks__basket">
-                  <svg
-                    width="16"
-                    height="18"
-                    viewBox="0 0 16 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8 6.83333V13.8333M10.9167 6.83333L10.3333 13.8333M5.08333 6.83333L5.66667 13.8333M5.66667 3.33333L6.25 1H9.75L10.3333 3.33333M15 3.33333H2.16667L3.33333 17.3333H12.6667L13.8333 3.33333H1H15Z"
-                      stroke="#FF0000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </div>
+
+            <ul class="tasks__list"></ul>
           </div>
         </div>
       </section>
@@ -134,6 +117,6 @@
       src="https://kit.fontawesome.com/2cffbe9dc3.js"
       crossorigin="anonymous"
     ></script>
-    >
+    <script src="./script.js"></script>
   </body>
 </html>
